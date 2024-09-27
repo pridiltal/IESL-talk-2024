@@ -80,63 +80,38 @@ class: left, top, clear
 
 ---
 background-image:url('fig/4_outtype2.png')
-background-position: 80% 50%
+background-position: 50% 50%
 background-size: 75%
 class: left, top, clear
 
 ## Anomalies in temporal data
----
-background-image:url('fig/5_applications.png')
-background-position: 70% 70%
-background-size: 100%
-class: left, top, clear
-
-## Anomalous series within a space of a collection of series
 ---
 - Approaches to solving the problem of anomaly detection for temporal data :
 --
 .pull-left[
 ### Batch scenario 
 - whole set of data is available
-- complete events &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+- Complete events &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;img src="fig/6_batch.png" width="100%" /&gt;
 ]
 --
 .pull-right[
 ### Data stream scenario
-- continuous, unbounded, flow at high speed, high volume
-- incomplete events
+- Continuous, unbounded, flow at high speed, high volume
+- Incomplete events
 &lt;img src="fig/7_stream.gif" width="100%" /&gt;
 ]
 ---
-Civil Engineering:
-Application: Structural Health Monitoring
-Input Data Structure: Time series data from sensors (e.g., accelerometers, strain gauges) measuring vibrations, stresses, and displacements of a structure over time.
+background-image:url('fig/stray.png')
+background-position: 80% 50%
+background-size: 100%
+class: left, top, clear
 
-Sydney bridge
-
----
-class: center, middle
-
-&lt;p&gt;&lt;font size=12&gt; &lt;span style="color:blue"&gt; stray (S&lt;/span&gt;earch and &lt;span style="color:blue"&gt;TR&lt;/span&gt;ace &lt;span style="color:blue"&gt;A&lt;/span&gt;nomal&lt;span style="color:blue"&gt;Y&lt;span&gt;)
-&lt;/font size=12&gt;&lt;/p&gt;
-
-
-&lt;div class="figure"&gt;
-&lt;img src="fig/8_stray-logo.png" alt="on CRAN" width="30%" /&gt;
-&lt;p class="caption"&gt;on CRAN&lt;/p&gt;
-&lt;/div&gt;
-
-`devtools::install_github("pridiltal/stray")` 
 
 ---
 
 ## Anomaly detection in high dimensional Data
-
-### Main contributions
-- Propose a framework to detect anomalies in high dimensional data. Our proposed algorithm addresses the limitations of HDoutliers algorithm (Wilkinson, 2018).
---
 
 
 ### What is an anomaly ?
@@ -151,43 +126,33 @@ class: center, middle
 
 ## stray
 
-&lt;img src="fig/9_stray_plot1.png" width="50%" /&gt;
+&lt;img src="fig/9_stray_plot1.png" width="50%" style="display: block; margin: auto;" /&gt;
 -  Normalize the columns of the data. (median and IQR)
 -  This prevents variables with large variances having disproportional influence on Euclidean distances.
 ---
 
 ## Why not "nearest neighbour" distances? 
-&lt;img src="fig/9_stray_plot2.png" width="50%" /&gt;
+&lt;img src="fig/9_stray_plot2.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 - Calculate the nearest neighbour distance 
 ---
-## stray
-&lt;img src="fig/9_stray_plot5.png" width="50%" /&gt;
+## stray -  "k- nearest neighbour" distances 
+&lt;img src="fig/9_stray_plot5.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 
 - Select the &lt;span style="color:red"&gt; k nearest neighbour &lt;/span&gt; distance with the &lt;span style="color:red"&gt; maximum gap &lt;/span&gt;
 ---
-## Calculate anomalous threshold
+#### Calculate anomalous threshold
 
 - Use extreme value theory (EVT) to calculate a data driven outlier threshold.
---
 
-- Let **n** be the size of the dataset
---
-
-- Sort the resulting **n** outlier scores 
---
-
-- Consider the half of the outlier scores  with the smallest values as typical
---
-
-- Search for any significant large gap in the upper tail (Bottom up searching algorithm proposed by Schwarz, 2008)
-
+&lt;img src="fig/evt.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
-## Spacing theorem (Weissman, 1978)
+**Spacing theorem (Weissman, 1978)**
 
 .pull-left[
+
 Let `\(X_{1}, X_{2}, ..., X_{n}\)` be a sample from a distribution function `\(F\)` . &lt;/br&gt;
 Let `\(X_{1:n} \geq X_{2:n} \geq ... \geq X_{n:n}\)` be the order statistics. &lt;/br&gt;
 The available data are `\(X_{1:n}, X_{2:n},  ..., X_{k:n}\)` for some fixed `\(k\)`. &lt;/br&gt;
@@ -200,7 +165,7 @@ If `\(F\)` is in the maximum domain of attraction of the Gumbel distribution, th
 ---
 
 ## stray
-&lt;img src="fig/11_stray_plot6.png" width="50%" /&gt;
+&lt;img src="fig/11_stray_plot6.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 `outliers &lt;- find_HDoutliers(data)` &lt;br/&gt;
 `display_HDoutliers(data, outliers)`
@@ -208,47 +173,68 @@ If `\(F\)` is in the maximum domain of attraction of the Gumbel distribution, th
 ## Advantages of the proposed algorithm
 
 - Detect clusters of outlying points
+
 --
 
 - Applied to both uni- and multi- dimensional data
+
 --
 
 - Handle large datasets due to the use of approximate KNN searching algorithm
+
 --
 
 - Does not require a training set to build the decision model
+
 --
 
 - Deal with multimodal typical classes
+
 --
 
 - Outlier threshold has a probabilistic interpretation
+
 ---
 ## Feature based representation of time series
 .pull-left[
 - Mean   
+
 - Variance  
+
 - Changing variance in remainder 
-- Level shift using rolling window   
+
+- Level shift using rolling window  
+
 - Variance change  
+
 - Strength of linearity 
+
 - Strength of curvature  
  ]
 
 .pull-right[
-- Strength of spikiness  
-- Burstiness of time series (Fano Factor)  
+- Strength of spikiness 
+
+- Burstiness of time series (Fano Factor) 
+
 - Minimum  
+
 - Maximum  
+
 - The ratio between 50% trimmed mean and the arithmetic mean
+
 - Moment 
+
 - Ratio of means of data that is below and above the global mean  
 
 ]
 ---
 ### Approach 1: Using stray
+
 - use a moving window to deal with streaming data
+
 - Extract time series features from window
+
 - Apply stray algorithm to identify anomalous series
 
 .pull-left[
@@ -259,10 +245,6 @@ If `\(F\)` is in the maximum domain of attraction of the Gumbel distribution, th
 .pull-right[
 &lt;img src="fig/13_stray.gif" width="50%" /&gt;
 ]
-
-`tsfeatures &lt;- oddstream::extract_tsfeatures(ts_data)` &lt;br/&gt;
-`outliers &lt;- stray::find_HDoutliers(tsfeatures)` &lt;br/&gt;
-`stray::display_HDoutliers(tsfeatures, outliers)`
 
 
 ---
@@ -277,6 +259,13 @@ class:: center, clear
 &lt;img src="fig/14_P2_plot21b.png" width="75%" /&gt;
 ]
 
+---
+
+
+background-image:url('fig/fftdata.png')
+background-position: 50% 50%
+background-size: 100%
+class: left, top, clear
 ---
 class: center, clear
 

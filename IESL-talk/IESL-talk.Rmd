@@ -105,25 +105,18 @@ class: left, top, clear
 
 ---
 background-image:url('fig/4_outtype2.png')
-background-position: 80% 50%
+background-position: 50% 50%
 background-size: 75%
 class: left, top, clear
 
 ## Anomalies in temporal data
----
-background-image:url('fig/5_applications.png')
-background-position: 70% 70%
-background-size: 100%
-class: left, top, clear
-
-## Anomalous series within a space of a collection of series
 ---
 - Approaches to solving the problem of anomaly detection for temporal data :
 --
 .pull-left[
 ### Batch scenario 
 - whole set of data is available
-- complete events <br/><br/><br/>
+- Complete events <br/><br/><br/>
 
 ```{r mvtsplot, out.width = "100%",  fig.align = 'bottom',echo=FALSE}
 knitr::include_graphics("fig/6_batch.png")
@@ -132,39 +125,22 @@ knitr::include_graphics("fig/6_batch.png")
 --
 .pull-right[
 ### Data stream scenario
-- continuous, unbounded, flow at high speed, high volume
-- incomplete events
+- Continuous, unbounded, flow at high speed, high volume
+- Incomplete events
 ```{r  echo=FALSE, out.width = "100%", fig.align = 'up'}
 knitr::include_graphics("fig/7_stream.gif")
 ```
 ]
 ---
-Civil Engineering:
-Application: Structural Health Monitoring
-Input Data Structure: Time series data from sensors (e.g., accelerometers, strain gauges) measuring vibrations, stresses, and displacements of a structure over time.
+background-image:url('fig/stray.png')
+background-position: 80% 50%
+background-size: 100%
+class: left, top, clear
 
-Sydney bridge
-
----
-class: center, middle
-
-<p><font size=12> <span style="color:blue"> stray (S</span>earch and <span style="color:blue">TR</span>ace <span style="color:blue">A</span>nomal<span style="color:blue">Y<span>)
-</font size=12></p>
-
-
-```{r  out.width = "30%", echo=FALSE, fig.cap= "on CRAN" }
-knitr::include_graphics("fig/8_stray-logo.png")
-```
-
-`devtools::install_github("pridiltal/stray")` 
 
 ---
 
 ## Anomaly detection in high dimensional Data
-
-### Main contributions
-- Propose a framework to detect anomalies in high dimensional data. Our proposed algorithm addresses the limitations of HDoutliers algorithm (Wilkinson, 2018).
---
 
 
 ### What is an anomaly ?
@@ -179,7 +155,7 @@ knitr::include_graphics("fig/8_stray-logo.png")
 
 ## stray
 
-```{r  echo=FALSE, out.width = "50%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "50%", fig_align = 'top', fig.align = 'center'}
 knitr::include_graphics("fig/9_stray_plot1.png")
 ```
 -  Normalize the columns of the data. (median and IQR)
@@ -187,41 +163,33 @@ knitr::include_graphics("fig/9_stray_plot1.png")
 ---
 
 ## Why not "nearest neighbour" distances? 
-```{r  echo=FALSE, out.width = "50%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "50%", fig_align = 'top', fig.align = 'center'}
 knitr::include_graphics("fig/9_stray_plot2.png")
 ```
 
 - Calculate the nearest neighbour distance 
 ---
-## stray
-```{r  echo=FALSE, out.width = "50%", fig_align = 'top'}
+## stray -  "k- nearest neighbour" distances 
+```{r  echo=FALSE, out.width = "50%", fig_align = 'top', fig.align = 'center'}
 knitr::include_graphics("fig/9_stray_plot5.png")
 ```
 
 
 - Select the <span style="color:red"> k nearest neighbour </span> distance with the <span style="color:red"> maximum gap </span>
 ---
-## Calculate anomalous threshold
+#### Calculate anomalous threshold
 
 - Use extreme value theory (EVT) to calculate a data driven outlier threshold.
---
 
-- Let **n** be the size of the dataset
---
-
-- Sort the resulting **n** outlier scores 
---
-
-- Consider the half of the outlier scores  with the smallest values as typical
---
-
-- Search for any significant large gap in the upper tail (Bottom up searching algorithm proposed by Schwarz, 2008)
-
+```{r  echo=FALSE, out.width = "40%", fig_align = 'top', fig.align = 'center'}
+knitr::include_graphics("fig/evt.png")
+```
 
 ---
-## Spacing theorem (Weissman, 1978)
+**Spacing theorem (Weissman, 1978)**
 
 .pull-left[
+
 Let $X_{1}, X_{2}, ..., X_{n}$ be a sample from a distribution function $F$ . </br>
 Let $X_{1:n} \geq X_{2:n} \geq ... \geq X_{n:n}$ be the order statistics. </br>
 The available data are $X_{1:n}, X_{2:n},  ..., X_{k:n}$ for some fixed $k$. </br>
@@ -236,7 +204,7 @@ knitr::include_graphics("fig/10_spacingTheorem.png")
 ---
 
 ## stray
-```{r  echo=FALSE, out.width = "50%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "50%", fig_align = 'top', fig.align = 'center'}
 knitr::include_graphics("fig/11_stray_plot6.png")
 ```
 
@@ -246,47 +214,68 @@ knitr::include_graphics("fig/11_stray_plot6.png")
 ## Advantages of the proposed algorithm
 
 - Detect clusters of outlying points
+
 --
 
 - Applied to both uni- and multi- dimensional data
+
 --
 
 - Handle large datasets due to the use of approximate KNN searching algorithm
+
 --
 
 - Does not require a training set to build the decision model
+
 --
 
 - Deal with multimodal typical classes
+
 --
 
 - Outlier threshold has a probabilistic interpretation
+
 ---
 ## Feature based representation of time series
 .pull-left[
 - Mean   
+
 - Variance  
+
 - Changing variance in remainder 
-- Level shift using rolling window   
+
+- Level shift using rolling window  
+
 - Variance change  
+
 - Strength of linearity 
+
 - Strength of curvature  
  ]
 
 .pull-right[
-- Strength of spikiness  
-- Burstiness of time series (Fano Factor)  
+- Strength of spikiness 
+
+- Burstiness of time series (Fano Factor) 
+
 - Minimum  
+
 - Maximum  
+
 - The ratio between 50% trimmed mean and the arithmetic mean
+
 - Moment 
+
 - Ratio of means of data that is below and above the global mean  
 
 ]
 ---
 ### Approach 1: Using stray
+
 - use a moving window to deal with streaming data
+
 - Extract time series features from window
+
 - Apply stray algorithm to identify anomalous series
 
 .pull-left[
@@ -301,10 +290,6 @@ knitr::include_graphics("fig/12_strayts.png")
 knitr::include_graphics("fig/13_stray.gif")
 ```
 ]
-
-`tsfeatures <- oddstream::extract_tsfeatures(ts_data)` <br/>
-`outliers <- stray::find_HDoutliers(tsfeatures)` <br/>
-`stray::display_HDoutliers(tsfeatures, outliers)`
 
 
 ---
@@ -323,6 +308,13 @@ knitr::include_graphics("fig/14_P2_plot21b.png")
 ```
 ]
 
+---
+
+
+background-image:url('fig/fftdata.png')
+background-position: 50% 50%
+background-size: 100%
+class: left, top, clear
 ---
 class: center, clear
 
