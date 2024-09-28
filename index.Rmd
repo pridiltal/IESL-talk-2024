@@ -129,7 +129,7 @@ class: left, top, clear
 --
 .pull-left[
 ### Batch scenario 
-- whole set of data is available
+- Whole set of data is available
 - Complete events <br/><br/><br/>
 
 ```{r mvtsplot, out.width = "100%",  fig.align = 'bottom',echo=FALSE}
@@ -158,7 +158,7 @@ class: left, top, clear
 
 
 ### What is an anomaly ?
-- We define an anomaly as an observation that deviates markedly from the majority with a large distance gap.
+- We define an anomaly as an observation that deviates markedly from the majority with a  <span style="color:red"> large distance gap. </span>
 --
 
 
@@ -332,6 +332,21 @@ knitr::include_graphics("fig/22_tsfeatures.png")
 
 
 ---
+
+class:: center, clear
+.pull-left[
+ 
+```{r   echo=FALSE, out.width = "75%"}
+knitr::include_graphics("fig/14_P2_plot21a.png")
+```
+].pull-right[
+
+```{r   echo=FALSE, out.width = "75%"}
+knitr::include_graphics("fig/14_P2_plot21b.png")
+```
+]
+
+---
 background-image:url('fig/oddstreampaper.png')
 background-position: 50% 50%
 background-size: 100%
@@ -389,7 +404,7 @@ knitr::include_graphics("fig/19_psitrans.png")
 ```
 
 - $\Psi$-transform maps the density values back into space into which a Gumbel distribution can be fitted.
---
+
 
 - Anomalous threshold calculation $\longrightarrow$ <span style="color:red"> extreme value theory </span>
 
@@ -417,7 +432,7 @@ class:  center, middle, inverse
 
 # Adaptive Anomaly Detection
 
-## Managing <span style="color:#ffff05">Concept Drift </span>  in Data Streams
+## Managing <span style="color:red">Concept Drift </span>  in Data Streams
 
 ---
 
@@ -481,39 +496,6 @@ $$H_{0} : f_{t_{0}} = f_{t_{t}}$$
 
 ---
 
-class:  center, middle
-
-**Managing Concept Drift Through Adaptive Anomaly Detection**
-
-```{r  echo=FALSE, out.width = "80%", fig_align = 'top'}
-knitr::include_graphics("fig/32_sudden_out.png")
-```
-
-
----
-class: clear, middle, center
-.pull-left[
-### stray
- 
-```{r   echo=FALSE, out.width = "65%"}
-knitr::include_graphics("fig/33_P2_plot21a.png")
-```
-
-- Definition: distance 
-- no training set 
-]
-.pull-right[
-### oddstream
-
-```{r   echo=FALSE, out.width = "65%"}
-knitr::include_graphics("fig/34_P2_plot21b.png")
-```
-
-- Definition: density
-- need a training set
-]
-
----
 
 background-image:url('fig/2_outtypeb.png')
 background-position: 50% 70%
@@ -694,3 +676,37 @@ prital.netlify.app </br>
 - Outlier threshold has a probabilistic interpretation
 
 ---
+
+class:  center, middle
+
+**Managing Concept Drift Through Adaptive Anomaly Detection**
+
+```{r  echo=FALSE, out.width = "80%", fig_align = 'top'}
+knitr::include_graphics("fig/32_sudden_out.png")
+```
+
+
+---
+
+
+class: clear, middle, center
+.pull-left[
+### stray
+ 
+```{r   echo=FALSE, out.width = "65%"}
+knitr::include_graphics("fig/33_P2_plot21a.png")
+```
+
+- Definition: distance 
+- no training set 
+]
+.pull-right[
+### oddstream
+
+```{r   echo=FALSE, out.width = "65%"}
+knitr::include_graphics("fig/34_P2_plot21b.png")
+```
+
+- Definition: density
+- need a training set
+]

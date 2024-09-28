@@ -104,7 +104,7 @@ class: left, top, clear
 --
 .pull-left[
 ### Batch scenario 
-- whole set of data is available
+- Whole set of data is available
 - Complete events &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;img src="fig/6_batch.png" width="100%" /&gt;
@@ -129,7 +129,7 @@ class: left, top, clear
 
 
 ### What is an anomaly ?
-- We define an anomaly as an observation that deviates markedly from the majority with a large distance gap.
+- We define an anomaly as an observation that deviates markedly from the majority with a  &lt;span style="color:red"&gt; large distance gap. &lt;/span&gt;
 --
 
 
@@ -279,6 +279,17 @@ class: left, top, clear
 
 
 ---
+
+class:: center, clear
+.pull-left[
+ 
+&lt;img src="fig/14_P2_plot21a.png" width="75%" /&gt;
+].pull-right[
+
+&lt;img src="fig/14_P2_plot21b.png" width="75%" /&gt;
+]
+
+---
 background-image:url('fig/oddstreampaper.png')
 background-position: 50% 50%
 background-size: 100%
@@ -325,7 +336,7 @@ class: left, top, clear
 &lt;img src="fig/19_psitrans.png" width="50%" /&gt;
 
 - `\(\Psi\)`-transform maps the density values back into space into which a Gumbel distribution can be fitted.
---
+
 
 - Anomalous threshold calculation `\(\longrightarrow\)` &lt;span style="color:red"&gt; extreme value theory &lt;/span&gt;
 
@@ -347,7 +358,7 @@ class:  center, middle, inverse
 
 # Adaptive Anomaly Detection
 
-## Managing &lt;span style="color:#ffff05"&gt;Concept Drift &lt;/span&gt;  in Data Streams
+## Managing &lt;span style="color:red"&gt;Concept Drift &lt;/span&gt;  in Data Streams
 
 ---
 
@@ -395,33 +406,6 @@ class:  center, middle
 
 ---
 
-class:  center, middle
-
-**Managing Concept Drift Through Adaptive Anomaly Detection**
-
-&lt;img src="fig/32_sudden_out.png" width="80%" /&gt;
-
-
----
-class: clear, middle, center
-.pull-left[
-### stray
- 
-&lt;img src="fig/33_P2_plot21a.png" width="65%" /&gt;
-
-- Definition: distance 
-- no training set 
-]
-.pull-right[
-### oddstream
-
-&lt;img src="fig/34_P2_plot21b.png" width="65%" /&gt;
-
-- Definition: density
-- need a training set
-]
-
----
 
 background-image:url('fig/2_outtypeb.png')
 background-position: 50% 70%
@@ -585,6 +569,34 @@ prital.netlify.app &lt;/br&gt;
 - Outlier threshold has a probabilistic interpretation
 
 ---
+
+class:  center, middle
+
+**Managing Concept Drift Through Adaptive Anomaly Detection**
+
+&lt;img src="fig/32_sudden_out.png" width="80%" /&gt;
+
+
+---
+
+
+class: clear, middle, center
+.pull-left[
+### stray
+ 
+&lt;img src="fig/33_P2_plot21a.png" width="65%" /&gt;
+
+- Definition: distance 
+- no training set 
+]
+.pull-right[
+### oddstream
+
+&lt;img src="fig/34_P2_plot21b.png" width="65%" /&gt;
+
+- Definition: density
+- need a training set
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
