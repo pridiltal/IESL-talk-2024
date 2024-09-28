@@ -81,7 +81,7 @@ class: center, middle, inverse
 ---
 
 background-image:url('fig/sydney.jpeg')
-background-position: 50% 50%
+background-position: 50% 10%
 background-size: 100%
 class: left, top, clear
 
