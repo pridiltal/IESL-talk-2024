@@ -184,31 +184,7 @@ If `\(F\)` is in the maximum domain of attraction of the Gumbel distribution, th
 `outliers &lt;- find_HDoutliers(data)` &lt;br/&gt;
 `display_HDoutliers(data, outliers)`
 ---
-## Advantages of the proposed algorithm
 
-- Detect clusters of outlying points
-
---
-
-- Applied to both uni- and multi- dimensional data
-
---
-
-- Handle large datasets due to the use of approximate KNN searching algorithm
-
---
-
-- Does not require a training set to build the decision model
-
---
-
-- Deal with multimodal typical classes
-
---
-
-- Outlier threshold has a probabilistic interpretation
-
----
 background-image:url('fig/4_outtype2.png')
 background-position: 50% 70%
 background-size:80%
@@ -338,11 +314,11 @@ class: left, top, clear
 ---
 ## Anomalous threshold calculation 
 
-- Estimate the probability density function of the 2D PC space `\(\longrightarrow\)` Kernel density estimation
---
+- Estimate the probability density function of the 2D PC space `\(\longrightarrow\)` Kernel &lt;span style="color:red"&gt; density estimation&lt;/span&gt;
+
 
 - Draw a large number N of extremes `\((arg min_{x\in X}[f_{2}(x)])\)` from the estimated probability density function
---
+
 
 - Define a `\(\Psi\)`-transform space, using the `\(\Psi\)`-transformation defined by (Clifton et al., 2011)
 
@@ -351,7 +327,7 @@ class: left, top, clear
 - `\(\Psi\)`-transform maps the density values back into space into which a Gumbel distribution can be fitted.
 --
 
-- Anomalous threshold calculation `\(\longrightarrow\)` extreme value theory
+- Anomalous threshold calculation `\(\longrightarrow\)` &lt;span style="color:red"&gt; extreme value theory &lt;/span&gt;
 
 
 ---
@@ -579,6 +555,30 @@ prital.netlify.app &lt;/br&gt;
 
 &lt;br/&gt;&lt;br/&gt;The slides are powered by xaringan R package  
 
+---
+
+---
+
+## Advantages of the proposed algorithm
+
+- Detect clusters of outlying points
+
+
+- Applied to both uni- and multi- dimensional data
+
+
+- Handle large datasets due to the use of approximate KNN searching algorithm
+
+
+- Does not require a training set to build the decision model
+
+
+- Deal with multimodal typical classes
+
+
+- Outlier threshold has a probabilistic interpretation
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
