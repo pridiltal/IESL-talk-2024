@@ -67,7 +67,7 @@ knitr::include_graphics("fig/2_outtypea.png")
 ### Temporal data
 
 ```{r echo=FALSE, out.width = "90%"}
-knitr::include_graphics("fig/2_outtypeb.png")
+knitr::include_graphics("fig/2_outtypeb2.png")
 ```
 ]
 
