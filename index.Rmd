@@ -167,7 +167,7 @@ class: left, top, clear
 
 
 ---
-## stray -  "k- nearest neighbour" distanceswith the maximum gap
+## stray -  "k- nearest neighbour" distances with maximum gap
 ```{r  echo=FALSE, out.width = "50%", fig_align = 'top', fig.align = 'center'}
 knitr::include_graphics("fig/9_stray_plot5.png")
 ```
