@@ -670,8 +670,6 @@ icon::fa("globe")
 prital.netlify.app </br>
 (Slides and papers available)
 
-<br/><br/>The slides are powered by xaringan R package  
-
 ---
 
 ---
