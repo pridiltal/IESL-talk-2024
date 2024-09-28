@@ -136,21 +136,9 @@ class: left, top, clear
 ### Main assumptions
 - There is a large distance between typical data and the anomalies in comparison to the distance among typical data.
 
+
 ---
-
-## stray
-
-&lt;img src="fig/9_stray_plot1.png" width="50%" style="display: block; margin: auto;" /&gt;
--  Normalize the columns of the data. (median and IQR)
--  This prevents variables with large variances having disproportional influence on Euclidean distances.
----
-
-## Why not "nearest neighbour" distances? 
-&lt;img src="fig/9_stray_plot2.png" width="50%" style="display: block; margin: auto;" /&gt;
-
-- Calculate the nearest neighbour distance 
----
-## stray -  "k- nearest neighbour" distances 
+## stray -  "k- nearest neighbour" distanceswith the maximum gap
 &lt;img src="fig/9_stray_plot5.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 
@@ -296,33 +284,7 @@ background-size: 100%
 class: left, top, clear
 
 ---
-## Dimension reduction for time series 
 
-.pull-left[
-`load(train_data)`
-&lt;img src="fig/16_typical.png" width="100%" /&gt;
-]
---
-.pull-right[
-`tsfeatures &lt;- oddstream::extract_tsfeatures`&lt;/br&gt;`(train_data)`
-
-&lt;img src="fig/17_high_typical.gif" width="60%" /&gt;
-]
-
----
-
-.pull-left[
-`tsfeatures &lt;- oddstream::extract_tsfeatures`&lt;/br&gt;`(train_data)`
-
-&lt;img src="fig/17_high_typical.gif" width="70%" /&gt;
-]
---
-.pull-right[
-`pc&lt;- oddstream::get_pc_space(tsfeatures)`&lt;/br&gt;
-`oddstream::plotpc(pc$pcnorm)` 
-&lt;img src="fig/18_typicalfeature.png" width="90%" /&gt;
-]
----
 ## Anomalous threshold calculation 
 
 - Estimate the probability density function of the 2D PC space `\(\longrightarrow\)` Kernel &lt;span style="color:red"&gt; density estimation&lt;/span&gt;
@@ -601,6 +563,50 @@ class: clear, middle, center
 - Definition: density
 - need a training set
 ]
+
+---
+## stray
+
+&lt;img src="fig/9_stray_plot1.png" width="50%" style="display: block; margin: auto;" /&gt;
+-  Normalize the columns of the data. (median and IQR)
+-  This prevents variables with large variances having disproportional influence on Euclidean distances.
+---
+
+## Why not "nearest neighbour" distances? 
+&lt;img src="fig/9_stray_plot2.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+- Calculate the nearest neighbour distance 
+
+
+---
+
+## Dimension reduction for time series 
+
+.pull-left[
+`load(train_data)`
+&lt;img src="fig/16_typical.png" width="100%" /&gt;
+]
+--
+.pull-right[
+`tsfeatures &lt;- oddstream::extract_tsfeatures`&lt;/br&gt;`(train_data)`
+
+&lt;img src="fig/17_high_typical.gif" width="60%" /&gt;
+]
+
+---
+
+.pull-left[
+`tsfeatures &lt;- oddstream::extract_tsfeatures`&lt;/br&gt;`(train_data)`
+
+&lt;img src="fig/17_high_typical.gif" width="70%" /&gt;
+]
+--
+.pull-right[
+`pc&lt;- oddstream::get_pc_space(tsfeatures)`&lt;/br&gt;
+`oddstream::plotpc(pc$pcnorm)` 
+&lt;img src="fig/18_typicalfeature.png" width="90%" /&gt;
+]
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
