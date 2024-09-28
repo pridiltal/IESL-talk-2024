@@ -1,7 +1,7 @@
 ---
 title: "Statistics and Data Science Applications for Engineers"
 #author: </br></br>Priyanga Dilini Talagala
-date: </br></br> Priyanga Dilini Talagala </br>`r anicon::faa("globe", animate="horizontal", colour= "green")` <span style="color:lightgreen">prital.netlify.app</span></br></br> </br> <span style="font-size:15.0pt; color:lightgreen">28/09/2024</span></br> <span style="font-size:13.0pt; color:lightgreen">The slides are powered by xaringan R package </span>
+date: </br></br>Dr. Priyanga Dilini Talagala </br>`r anicon::faa("globe", animate="horizontal", colour= "green")` <span style="color:lightgreen">prital.netlify.app</span></br></br> </br> <span style="font-size:15.0pt; color:lightgreen">28/09/2024</span></br> <span style="font-size:18.0pt; color:#e36200">Webinar jointly organized by Institute of Engineers, Sri Lanka (IESL) and Institute of Applied Statistics, Sri Lanka (IASSL) </span>
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -37,9 +37,9 @@ style_mono_accent(
   text_font_google   = google_font("Montserrat", "500", "500i"),
   code_font_google   = google_font("Fira Mono"),
   title_slide_text_color = "lightgreen",
-  inverse_header_color = "#ffffff",
+  inverse_header_color = "#ffbb0f",
   header_background_text_color = "lightgreen",
-  inverse_text_color = "#ffffff",
+  inverse_text_color = "#ffbb0f",
   base_font_size = "20px",
   text_font_size = "1.3rem",
   header_h1_font_size = "3rem",
@@ -72,8 +72,16 @@ knitr::include_graphics("fig/2_outtypeb.png")
 ]
 
 ---
+
+class: center, middle, inverse
+
+# Monitoring Systems in Engineering in the Information Age
+
+
+---
+
 background-image:url('fig/sydney.jpeg')
-background-position: 80% 50%
+background-position: 50% 50%
 background-size: 100%
 class: left, top, clear
 
@@ -88,6 +96,12 @@ class: left, top, clear
 
 ---
 
+background-image:url('fig/condition.png')
+background-position: 80% 50%
+background-size: 100%
+class: left, top, clear
+
+---
 
 background-image:url('fig/app1.png')
 background-position: 80% 50%
@@ -105,8 +119,8 @@ class: left, top, clear
 
 ---
 background-image:url('fig/4_outtype2.png')
-background-position: 50% 50%
-background-size: 75%
+background-position: 50% 70%
+background-size:80%
 class: left, top, clear
 
 ## Anomalies in temporal data
@@ -236,6 +250,13 @@ knitr::include_graphics("fig/11_stray_plot6.png")
 - Outlier threshold has a probabilistic interpretation
 
 ---
+background-image:url('fig/4_outtype2.png')
+background-position: 50% 70%
+background-size:80%
+class: left, top, clear
+
+## Anomalies in temporal data
+---
 ## Feature based representation of time series
 .pull-left[
 - Mean   
@@ -316,17 +337,29 @@ background-position: 50% 50%
 background-size: 100%
 class: left, top, clear
 ---
-class: center, clear
 
-<p><font size=12> <span style="color:blue">oddstream </br> (O</span>utlier <span style="color:blue">D</span>etection in <span style="color:blue">D</span>ata  <span style="color:blue">STREAM</span>s)
-</font size=12></p> 
+.pull-left[
+### Feature Based Representation of Time series
 
 
-```{r  out.width = "30%", echo=FALSE}
-knitr::include_graphics("fig/15_oddstream_logo.png")
+```{r   echo=FALSE, out.width = "110%", fig_align = 'bottom'}
+knitr::include_graphics("fig/6_batch.png")
 ```
 
-`devtools::install_github("pridiltal/oddstream")` 
+
+]
+.pull-right[
+```{r  echo=FALSE, out.width = "90%",}
+knitr::include_graphics("fig/22_tsfeatures.png")
+```
+]
+
+
+---
+background-image:url('fig/oddstreampaper.png')
+background-position: 50% 50%
+background-size: 100%
+class: left, top, clear
 
 ---
 ## Dimension reduction for time series 
@@ -402,60 +435,41 @@ knitr::include_graphics("fig/21_oddstream_pcplot.gif")
 ```
 ]
 ---
-class:  top
-### Feature Based Representation of Time series
-    
-.pull-left[
 
-
-```{r   echo=FALSE, out.width = "100%", fig_align = 'bottom'}
-knitr::include_graphics("fig/6_batch.png")
-```
-
-
-]
-.pull-right[
-```{r  echo=FALSE, out.width = "75%",}
-knitr::include_graphics("fig/22_tsfeatures.png")
-```
-]
-
----
 class:  center, middle, inverse
 
 
-# Anomaly Detection with <br/>  <span style="color:#ffff05"> Non-stationarity </span>
+# Adaptive Anomaly Detection
 
+## Managing <span style="color:#ffff05">Concept Drift </span>  in Data Streams
 
 ---
-class:  center, middle
 
-#### Anomaly detection with non-stationarity
+background-image:url('fig/23_nonstationaritytypes.png')
+background-position: 50% 50%
+background-size: 50%
+class: left, top, clear
 
-```{r  echo=FALSE, out.width = "50%", fig_align = 'top'}
-knitr::include_graphics("fig/23_nonstationaritytypes.png")
-```
 ---
-class:  center, middle
-### Anomaly detection with non-stationarity
 
-```{r  echo=FALSE, out.width = "70%", fig_align = 'top'}
+class:  center, middle
+
+```{r  echo=FALSE, out.width = "85%", fig_align = 'top', out.height="10%"}
 knitr::include_graphics("fig/24_suddenplot2.png")
 ```
 
-```{r  echo=FALSE, out.width = "25%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "30%", fig_align = 'top'}
 knitr::include_graphics("fig/25_noCD1.png")
 ```
 ---
 
 class:  center, middle
-### Anomaly detection with non-stationarity
 
-```{r  echo=FALSE, out.width = "70%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "85%", fig_align = 'top', out.height="10%"}
 knitr::include_graphics("fig/26_suddenplot3.png")
 ```
 
-```{r  echo=FALSE, out.width = "25%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "30%", fig_align = 'top'}
 knitr::include_graphics("fig/27_noCD2.png")
 ```
 
@@ -463,22 +477,20 @@ knitr::include_graphics("fig/27_noCD2.png")
 
 class:  center, middle
 
-### Anomaly detection with non-stationarity
-
-```{r  echo=FALSE, out.width = "70%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "85%", fig_align = 'top',  out.height="10%"}
 knitr::include_graphics("fig/28_suddenplot4.png")
 ```
 
-```{r  echo=FALSE, out.width = "25%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "30%", fig_align = 'top'}
 knitr::include_graphics("fig/29_noCD3.png")
 ```
 
 ---
 
 class:  center, middle
-### Anomaly detection with non-stationarity
+**Managing Concept Drift Through Adaptive Anomaly Detection**
 
-```{r  echo=FALSE, out.width = "80%", fig_align = 'top'}
+```{r  echo=FALSE, out.width = "70%", fig_align = 'top', out.height="10%"}
 knitr::include_graphics("fig/30_suddenplot2.png")
 ```
 
@@ -486,7 +498,7 @@ knitr::include_graphics("fig/30_suddenplot2.png")
 knitr::include_graphics("fig/31_conceptdrift_pval.png")
 ```
 
-- $H_{0} : f_{t_{0}} = f_{t_{t}}$
+$$H_{0} : f_{t_{0}} = f_{t_{t}}$$
 
 
 - squared discrepancy measure $T = \int[f_{t_{0}}(x) - f_{t_{t}}(x)]^{2}dx$ (Anderson et al., 1994)
@@ -494,9 +506,10 @@ knitr::include_graphics("fig/31_conceptdrift_pval.png")
 ---
 
 class:  center, middle
-### Anomaly detection with non-stationarity
 
-```{r  echo=FALSE, out.width = "70%", fig_align = 'top'}
+**Managing Concept Drift Through Adaptive Anomaly Detection**
+
+```{r  echo=FALSE, out.width = "80%", fig_align = 'top'}
 knitr::include_graphics("fig/32_sudden_out.png")
 ```
 
@@ -525,30 +538,54 @@ knitr::include_graphics("fig/34_P2_plot21b.png")
 ]
 
 ---
-class: clear, middle
-.pull-left[
 
-```{r  out.width = "20%", echo=FALSE}
-knitr::include_graphics("fig/35_JCGS_logo.png")
+background-image:url('fig/2_outtypeb.png')
+background-position: 50% 70%
+background-size:100%
+class: left, top, clear
+
+## Anomalies in temporal data
+---
+
+## Technical issues in sensor equipments
+
+This work is part of a collaborative research project with Queensland University of Technology, the <span style="color:red"> Queensland Department of Environment and Science </span>, and the <span style="color:red"> National Ecological Observatory Network (NEON) in the USA  </span>, as part of the Great Barrier Reef Catchment Loads Monitoring Program in Australia.
+
+
+```{r   echo=FALSE, out.width = "75%",  fig.align = 'center'}
+knitr::include_graphics("fig/sensor.png")
 ```
+---
+background-image:url('fig/3_Techissues.png')
+background-position: 50% 70%
+background-size:100%
+class: left, top, clear
 
-Priyanga Dilini Talagala, Rob J Hyndman, Kate Smith-Miles, (2020) **Anomaly detection in high-dimensional data**. Journal of Computational & Graphical Statistics, *to appear*
+---
+background-image:url('fig/water.png')
+background-position: 50% 70%
+background-size:100%
+class: left, top, clear
 
-```{r  out.width = "25%", echo=FALSE, fig.cap="on CRAN"}
-knitr::include_graphics("fig/8_stray-logo.png")
-```
-]
-.pull-right[
-```{r  out.width = "20%", echo=FALSE}
-knitr::include_graphics("fig/35_JCGS_logo.png")
-```
 
-Priyanga Dilini Talagala, Rob J Hyndman, Kate Smith-Miles, Sevvandi Kandanaarachchi and Mario A Munoz (2020) **Anomaly detection in streaming nonstationary temporal data**. Journal of Computational & Graphical Statistics, 20(1), 13-27.
+---
 
-```{r  out.width = "25%", echo=FALSE, fig.cap="on CRAN"}
-knitr::include_graphics("fig/36_oddstream1.png")
-```
-]
+background-image:url('fig/techissues.png')
+background-position: 50% 70%
+background-size:80%
+class: left, top, clear
+
+## Technical issues in sensor equipments
+
+---
+
+background-image:url('fig/18_upstream_b.png')
+background-position: 50% 70%
+background-size:90%
+class: left, top, clear
+
+
+
 ---
 class: center, middle, inverse
 
@@ -556,108 +593,79 @@ class: center, middle, inverse
 
 
 
+
 ---
-## Image Time Series (ITS) 
-
-
--  A stack of images or a videos -  Image Time Series (ITS) 
-
-- An ITS is basically a set of images of the same scene, ordered chronologically.
-
-- It can be encoded as a data-cube, two spatial and one temporal dimensions. 
-
-- The acquisition of an ITS can be done with one or multiple sensors to obtain a larger data series with a high temporal frequency.
-
-- The produced $2D +t$ data carry rich spatial and temporal information that must be taken into account to understand particular phenomena not being observable from a single image of the sequence.
-
-
-
-
-<!--
-Chelali, M., Kurtz, C., Puissant, A., & Vincent, N. (2021). Deep-STaR: Classification of image time series based on spatio-temporal representations. Computer Vision and Image Understanding, 208, 103221.
--->
----
-## Satellite Image Time Series (SITS)
-
-- A Satellite Image Time Series (SITS) is a set of satellite images taken from the same scene at different times
+A Satellite Image Time Series (SITS) - set of satellite images taken from the same scene at different times
 
 .pull-left[
 
-```{r   echo=FALSE, out.width = "75%"}
+```{r   echo=FALSE, out.width = "100%",  fig.align = 'center'}
 knitr::include_graphics("fig/37_deforestation.gif")
 ```
 ].pull-right[
-```{r   echo=FALSE, out.width = "75%"}
+```{r   echo=FALSE, out.width = "100%",  fig.align = 'center'}
 knitr::include_graphics("fig/38_volcano.gif")
 ```
 
 ]
 ---
+background-image:url('fig/Agricultural-drone.jpg')
+background-position: 50% 70%
+background-size:100%
+class: left, top, clear
 
-## Approach 1: Traditional Machine Learning Approach
-
-```{r   echo=FALSE, out.width = "90%"}
-knitr::include_graphics("fig/39_ML.png")
-```
 ---
 
-## Approach 2: Deep Learning Approach
-
-```{r   echo=FALSE, out.width = "90%"}
-knitr::include_graphics("fig/40_Deep.png")
-```
----
-## Binary Classification using EVT based Threshold
+### Binary Classification using Forecasting and EVT based Threshold
 
 ```{r   echo=FALSE, out.width = "100%"}
 knitr::include_graphics("fig/41_threshold.png")
 ```
 ---
-## EVT based Anomaly Threshold Calculation
 
-```{r   echo=FALSE, out.width = "100%"}
-knitr::include_graphics("fig/42_evt.png")
-```
----
-## Binary Classification using EVT based Threshold
+class: center, middle, inverse
 
-```{r   echo=FALSE, out.width = "100%"}
-knitr::include_graphics("fig/41_threshold.png")
-```
+# Myth 
+
+## We now have AI and Machine Learning so don't need statistics anymore.
 
 ---
 
-### What Next?
-
-- Explore more on feature extraction and feature selection methods to create a better feature space suitable for streaming data context.
---
-
-- Use other dimension reduction techniques such as multidimensional scaling analysis, random projection to see the effect on the performance of the proposed framework.
---
-
-- Do more experiments on density estimation methods to get a better tail estimation.
---
-
-- Implement a suitable explainable model for anomaly detection in image streams.
---
-
-- Extend the algorithm to work with Multidimensional Multivariate Data streams
+background-image:url('fig/GDPR.png')
+background-position: 50% 70%
+background-size:100%
+class: left, top, clear
 
 ---
-class: center, middle
+
+- The problem with many state-of-the-art AI models is a lack of transparency and interpretability 
+
+- Hard to explain internal logic and inner workings
+--
+
+## Statistics Remains Vital
+   
+- Fundamental for AI and  Explanable AI
+   
+- Essential for interpreting and validating AI models.
+   
+- When data is limited, statistical methods are often the most reliable approach.
+---
+
+
+class: center, middle, inverse
+
+# Myth 
+
+## ~~We now have AI and Machine Learning so don't need statistics anymore.~~
+
+## Statistics powers AI and Machine Learning for smarter engineering decisions!
+
+
+---
+class: center, middle, inverse
 
 # Thank You
-
-.pull-left[
-```{r  out.width = "45%", echo=FALSE}
-knitr::include_graphics("fig/36_oddstream1.png")
-```
-]
-.pull-right[
-```{r  out.width = "45%", echo=FALSE}
-knitr::include_graphics("fig/8_stray-logo.png")
-```
-]
 
 ```{r}
 icon::fa("envelope")
@@ -678,5 +686,5 @@ icon::fa("globe")
 prital.netlify.app </br>
 (Slides and papers available)
 
-<br/><br/>The slides are powered by `xaringan` R package  
+<br/><br/>The slides are powered by xaringan R package  
 
